@@ -1,5 +1,6 @@
 from agents.custom_agent import CustomAgent
 from agents.torchbeast_agent import TorchBeastAgent
+from agents.rllib_batched_agent import RLlibAgent
 
 from envs.wrappers import addtimelimitwrapper_fn
 
@@ -16,6 +17,8 @@ class SubmissionConfig:
     ## Add your own agent class
     AGENT = CustomAgent
     # AGENT = TorchBeastAgent
+    # AGENT = RLlibAgent
+    # AGENT = RandomAgent
 
 
     ## Change the NUM_ENVIRONMENTS as you need

@@ -47,3 +47,4 @@ COPY --chown=1001:1001 requirements.txt ${HOME_DIR}/requirements.txt
 RUN pip install -r requirements.txt --no-cache-dir
 
 COPY --chown=1001:1001 . ${HOME_DIR}
+RUN pip install . --no-cache-dir

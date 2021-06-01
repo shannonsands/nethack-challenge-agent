@@ -7,5 +7,6 @@ aicrowd-gym
 numpy
 scipy
 nle
+wandb
 tqdm
 wandb
