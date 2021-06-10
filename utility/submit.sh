@@ -53,7 +53,7 @@ setup_commits() {
   REMOTE=$(git remote -v | grep gitlab.aicrowd.com | head -1 | awk '{print $1}')
   TAG=$(echo "$@" | sed 's/ /-/g')
   git add --all
-  git commit -m "Changes for submission-$TAG"
+  git commit -m "Changes for submission-$TAG" || true
   git tag -am "submission-$TAG" "submission-$TAG" || (log_error "There is another submission with the same description. Please give a different description." && exit 1)
   git push -f $REMOTE master
   git push -f $REMOTE "submission-$TAG"
