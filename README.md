@@ -21,13 +21,13 @@ Quick Links:
 With Docker and x1 GPU
 ```bash
 # 1. CLONE THE REPO AND DOWNLOAD BASELINE MODELS
-git clone http://gitlab.aicrowd.com/nethack/neurips-2021-the-nethack-challenge.git \
-    && cd neurips-2021-the-nethack-challenge \
+git clone https://github.com/shannonsands/nethack-challenge-agent.git \
+    && cd nethack-challenge-agent \
     && git lfs install \
     && git lfs pull  
 
 # 2. START THE DOCKER IMAGE
-docker run -it -v `pwd`:/home/aicrowd --gpus 'all' fairnle/challenge:dev 
+docker run -it -v $(pwd):/home/aicrowd --gpus 'all' fairnle/challenge:dev 
 
 # 3. TEST AN EXISTING SUBMISSION 
 python test_submission.py      # Tests ./saved_models/pretrained_0.5B
@@ -258,11 +258,11 @@ This image is based of Ubuntu 18.04, with CUDA 10.2 and cudnn 7, and is the Dock
 
 **Without GPUS**
 ```
-docker run -it -v `pwd`:/home/aicrowd fairnle/challenge:dev
+docker run -it -v $(pwd):/home/aicrowd fairnle/challenge:dev
 ```
 **With GPUS**
 ```
-docker run -it -v `pwd`:/home/aicrowd --gpus 'all' fairnle/challenge:dev
+docker run -it -v $(pwd):/home/aicrowd --gpus 'all' fairnle/challenge:dev
 ```
 
 *NB* On Linux, this `--gpus` argument requires you to install `nvidia-container-toolkit`, which on Ubuntu is available with `apt install`.
